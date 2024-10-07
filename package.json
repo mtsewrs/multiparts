@@ -29,5 +29,10 @@
   "packageManager": "bun@1.1.26",
   "peerDependencies": {
     "typescript": "^5.6.2"
+  },
+  "optionalDependencies": {
+    "multiparts-win32-x64-msvc": "0.0.0",
+    "multiparts-darwin-x64": "0.0.0",
+    "multiparts-linux-x64-gnu": "0.0.0"
   }
 }

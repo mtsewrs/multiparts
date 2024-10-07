@@ -26,6 +26,9 @@ jobs:
       matrix:
         settings:
           - host: macos-latest
+            target: aarch64-apple-darwin
+            build: bun run build --target aarch64-apple-darwin
+          - host: macos-latest
             target: x86_64-apple-darwin
             build: bun run build --target x86_64-apple-darwin
           - host: windows-latest
@@ -64,10 +67,6 @@ jobs:
       - name: Setup toolchain
         run: ${{ matrix.settings.setup }}
         if: ${{ matrix.settings.setup }}
-        shell: bash
-      - name: Setup bun x86
-        if: matrix.settings.target == 'i686-pc-windows-msvc'
-        run: pnpm config set supportedArchitectures.cpu "ia32"
         shell: bash
       - name: Install dependencies
         run: bun install
@@ -110,8 +109,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Setup bun
         uses: oven-sh/setup-bun@v2
-        with:
-          architecture: x64
       - name: Install dependencies
         run: bun install
       - name: Download artifacts
