@@ -110,12 +110,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup bun
-        run: echo "BUN_DOWNLOAD_URL=https://github.com/oven-sh/bun/releases/latest/download/bun-darwin-x64.zip" >> $GITHUB_ENV
+        run: echo "BUN_DOWNLOAD_URL=https://github.com/oven-sh/bun/releases/1.1.29/download/bun-darwin-x64.zip" >> $GITHUB_ENV
         if: ${{ matrix.settings.target == 'x86_64-apple-darwin' }}
       - name: Setup bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-download-url: "${{ env.BUN_DOWNLOAD_URL }}"
+          bun-version: 1.1.24
       - name: Install dependencies
         run: bun install
       - name: Download artifacts
