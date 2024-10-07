@@ -101,6 +101,8 @@ jobs:
       matrix:
         settings:
           - host: macos-latest
+            target: x86_64-apple-darwin
+          - host: macos-latest
             target: aarch64-apple-darwin
           - host: windows-latest
             target: x86_64-pc-windows-msvc
@@ -161,7 +163,7 @@ jobs:
         with:
           path: artifacts
       - name: Move artifacts
-        run: bun artifacts
+        run: bun run artifacts
       - name: List packages
         run: ls -R ./npm
         shell: bash
