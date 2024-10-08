@@ -1,6 +1,5 @@
 import { test, describe, expect, afterAll, beforeAll } from "vitest";
 
-// import { serve } from "./serve";
 import { server } from "./http";
 import { createRequest } from "./request";
 
@@ -12,12 +11,13 @@ describe("Get Parts Node", () => {
     server.close();
   });
 
-  test("Should parse inconing multipart with bun serve and node http", async () => {
+  test("Should parse inconing multipart", async () => {
     const { request, content, contentType } = createRequest(
       "http://localhost:8080"
     );
 
     const response = await fetch(request);
+    expect(response.ok).toBe(true);
     const json = (await response.json()) as {
       data: string;
       contentType: string;

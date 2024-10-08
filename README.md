@@ -1,15 +1,17 @@
-# multipart-napi
+# multiparts
 
 To install dependencies:
 
 ```bash
-bun install
+pnpm install
 ```
 
-To run:
+Build and test
 
 ```bash
-bun run index.js
+pnpm build
 ```
 
-This project was created using `bun init` in bun v1.1.26. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+```bash
+pnpm test
+```
