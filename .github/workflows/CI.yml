@@ -123,6 +123,9 @@ jobs:
       - name: List packages
         run: ls -R .
         shell: bash
+      - name: Add config
+        run: echo '[define]\n"process.arch" = "'${{ matrix.settings.architecture }}'"' > .bunfig.toml
+        shell: bash
       - name: Test bindings
         run: bun test
   test-linux-x64-gnu-binding:
