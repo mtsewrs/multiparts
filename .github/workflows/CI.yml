@@ -106,7 +106,6 @@ jobs:
         settings:
           - host: macos-latest
             target: x86_64-apple-darwin
-            architecture: x64
           - host: windows-latest
             target: x86_64-pc-windows-msvc
     runs-on: ${{ matrix.settings.host }}
@@ -119,7 +118,7 @@ jobs:
         with:
           cache: "pnpm"
           node-version: 20
-          architecture: ${{ matrix.settings.architecture }}
+          architecture: x64
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
       - name: Download artifacts
