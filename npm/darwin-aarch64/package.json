@@ -5,7 +5,7 @@
     "darwin"
   ],
   "cpu": [
-    "arm64"
+    "aarch64"
   ],
   "main": "multiparts.darwin-arm64.node",
   "files": [
